@@ -11,40 +11,40 @@
    1. Clicamos sobre EC2 > Security Groups
    2. Creamos los siguientes grupos de seguridad con los siguientes parámetros:
 
-        ![img](Practica4-4/img/Imagen1.png)
+        ![img](./img/Imagen1.png)
 
    3. Después modificaremos las reglas de entrada del grupo de seguridad abriendo el puerto SSH
    
-        ![img](Practica4-4/img/Imagen2.png)
+        ![img](./img/Imagen2.png)
 
    4. Y creamos otro grupo de seguridad con los siguientes parámetros:
 
-        ![img](Practica4-4/img/Imagen3.png)
+        ![img](./img/Imagen3.png)
 
       IMPORTANTE el origen es el grupo de seguridad creado anterior a éste.
 
 2. Creamos las máquinas EC2
 
-        ![img](Practica4-4/img/Imagen4.png)
-        ![img](Practica4-4/img/Imagen5.png)
+        ![img](./img/Imagen4.png)
+        ![img](./img/Imagen5.png)
 
    1. Desplegamos la pestaña de Detalles avanzados y modificamos lo siguiente:
 
-        ![img](Practica4-4/img/Imagen6.png)
+        ![img](./img/Imagen6.png)
 
    2. Después des eso desplegamos la instancia
    3. Posteriormente crearemos otra máquina con los mismos cambios menos este: En vez de la subred con zona de disponibilidad en “us-east-1a” será “us-east-1b”.
 
-        ![img](Practica4-4/img/Imagen7.png)
+        ![img](./img/Imagen7.png)
 
 3. Montaremos un sistema de archivos NFS
 
-        ![img](Practica4-4/img/Imagen8.png)
-        ![img](Practica4-4/img/Imagen9.png)
+        ![img](./img/Imagen8.png)
+        ![img](./img/Imagen9.png)
 
     1. Cuando lo hayamos creado nos iremos a Red > Administrar e cambiaremos en las zonas de disponibilidad para que escoja el grupo de seguridad “SCefs"
 
-        ![img](Practica4-4/img/Imagen10.png)
+        ![img](./img/Imagen10.png)
 
 4. Posteriormente nos conectaremos a las máquinas EC2 creadas anteriormente
 
@@ -56,7 +56,7 @@
   
     2. Y luego este otro cambiando IDEFS por la id de EFS:
 
-        ![img](Practica4-4/img/Imagen11.png)
+        ![img](./img/Imagen11.png)
 
         - sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport “IDEFS”.efs.us-east-1.amazonaws.com:/ efs-mount
 
@@ -72,13 +72,13 @@
         - curl localhost/efs-mount/index.html
   
 
-        ![img](Practica4-4/img/Imagen12.png)
+        ![img](./img/Imagen12.png)
 
     6. Si queremos mostrarla en el navegador:
 
         Y saldrá esto: 
 
-        ![img](Practica4-4/img/Imagen13.png)
+        ![img](./img/Imagen13.png)
 
 5. Modificar el fichero de Apache
 
@@ -88,7 +88,7 @@
 
     2. Se modificará el fichero en:
 
-        ![img](Practica4-4/img/Imagen14.png)
+        ![img](./img/Imagen14.png)
 
         Para sobreescribir es ESC > :w, y luego para salir es: ESC > :q!
 
